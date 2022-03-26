@@ -35,10 +35,12 @@ for ( var i = 0; i < saveButton.length; i++) {
 var currentHour = (new Date()).getHours();
 $('.hour')
   .each(function(){
-    var val = parseInt($(this).prop('id'));
+    var val = parseInt($(this).prop('id')); //parses a string argument and returns an integer
+    console.log($(this))
+   console.log(currentHour.getHours);
     if(val > currentHour && val < currentHour + 6){
       $(this).css('background-color','Blue'); //future hours shows in blue
-    }else if(val < currentHour && val > currentHour-9){
+    }else if(val < currentHour && val > currentHour- 6){
       $(this).css('background-color','Red'); //past hours shows in red
     }else if(val === currentHour){
       $(this).css('background-color','White'); //current hour shows in white
