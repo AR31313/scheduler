@@ -32,12 +32,12 @@ for ( var i = 0; i < saveButton.length; i++) {
 };
 
 //method that Gets the hours in a date, using local time.
-var currentHour = (new Date()).getHours();
-$('.hour')
-  .each(function(){
-    var val = parseInt($(this).prop('id')); //parses a string argument and returns an integer
+var currentHour = (new Date()).getHours(); //The getHours() method returns the hour for the specified date, according to local time.
+$('.time-div') //SELECT element with the class time-div"
+  .each(function(){ //create Variable VAL as index position of the selector
+    var val = parseInt($(this).prop('id')); //parses a string argument and returns an integer THIS then PROP will Add a new property to element ID.
     console.log($(this))
-   console.log(currentHour.getHours);
+    console.log(currentHour.getHours);
     if(val > currentHour && val < currentHour + 6){
       $(this).css('background-color','Blue'); //future hours shows in blue
     }else if(val < currentHour && val > currentHour- 6){
