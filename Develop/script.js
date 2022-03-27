@@ -16,7 +16,7 @@ var saveButton = document.querySelectorAll(".saveBtn");
 // variable to store past, prersent & future w/color
 var eventEL = document.querySelectorAll(".events");
 //element that holds the hour text
-var hourEl = document.querySelectorAll(".hour");
+var hourEl = document.querySelectorAll("cd.hour");
 
 //grabs values from hour and entry divs and saves them to local storage
 for ( var i = 0; i < saveButton.length; i++) { 
@@ -31,11 +31,26 @@ for ( var i = 0; i < saveButton.length; i++) {
     })
 };
 
-//method that Gets the hours in a date, using local time.
-var currentHour = (new Date()).getHours(); //The getHours() method returns the hour for the specified date, according to local time.
-$('.time-div') //SELECT element with the class time-div"
-  .each(function(){ //create Variable VAL as index position of the selector
-    var val = parseInt($(this).prop('id')); //parses a string argument and returns an integer THIS then PROP will Add a new property to element ID.
+// //method that Gets the hours in a date, using local time.
+// var currentHour = (new Date()).getHours(); //The getHours() method returns the hour for the specified date, according to local time.
+// $('.time-div') //SELECT element with the class time-div"
+//   .each(function(){ //create Variable VAL as index position of the selector
+//     var val = parseInt($(this).prop('id')); //parses a string argument and returns an integer'THIS' then, PROP will Add a new property to element ID.
+//     console.log($(this))
+//     console.log(currentHour.getHours);
+//     if(val > currentHour && val < currentHour + 6){
+//       $(this).css('background-color','Blue'); //future hours shows in blue
+//     }else if(val < currentHour && val > currentHour- 6){
+//       $(this).css('background-color','Red'); //past hours shows in red
+//     }else if(val === currentHour){
+//       $(this).css('background-color','White'); //current hour shows in white
+//     }else{
+//       $(this).css('background-color','Green');
+//     }
+// });
+var currentHour = (new Date()).getHours(); 
+$('.time-div').each(function(){ 
+    var val = parseInt($(this).prop('id')); 
     console.log($(this))
     console.log(currentHour.getHours);
     if(val > currentHour && val < currentHour + 6){

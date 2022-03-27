@@ -1,42 +1,24 @@
-Third-Party APIs: Work Day Scheduler
+# Third-Party APIs: Work Day Scheduler
+***
 
-Task
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. 
-This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## A simple calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
-You'll need to use the Moment.js library to work with date and time.
+* Current day is displayed at the top of the calendar.
+* User can add events to a daily planner using timeblocks for standard business hours.
+* Each timeblock is color coded to indicate whether it is in the past, present, or future.
+* User can save an event for that timeblock and the that event is saved in local storage.
+* The saved events persists even after the page has been refreshed.
+***
+ Moment.js library was used to work with date and time.
+ Application user experience is intuitive and easy to navigate
+ Application user interface style is clean and polished
+***
 
-User Story
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-Acceptance Criteria
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-The following animation demonstrates the application functionality:
+* **Application deployed at live URL:**
+https://ar31313.github.io/scheduler/
 
-A user clicks on slots on the color-coded calendar and edits the events.
+* **Application GitHub URL:** 
+https://github.com/AR31313/scheduler
 
-Application deployed at live URL
-
-Application loads with no errors
-
-Application GitHub URL submitted
-
-
-Application user experience is intuitive and easy to navigate
-
-Application user interface style is clean and polished
-
-screenshot to deployed application
+* **Screenshot to deployed application:**
+![Untitled](https://user-images.githubusercontent.com/96843377/160267288-2d51ab3c-597a-4601-9132-f49bb34082ba.png)
