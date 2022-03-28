@@ -15,8 +15,7 @@ var resetBtn = document.querySelectorAll(".saveBtn");
 var saveButton = document.querySelectorAll(".saveBtn");
 // variable to store past, prersent & future w/color
 var eventEL = document.querySelectorAll(".events");
-//element that holds the hour text
-var hourEl = document.querySelectorAll("cd.hour");
+var hourEL = document.querySelectorAll (".hour");
 
 //grabs values from hour and entry divs and saves them to local storage
 for ( var i = 0; i < saveButton.length; i++) { 
@@ -27,6 +26,7 @@ for ( var i = 0; i < saveButton.length; i++) {
       }
       var timeName = event.target.previousElementSibling.previousElementSibling.textContent;
       localStorage.setItem(timeName,entry);
+      
       
     })
 };
@@ -48,18 +48,20 @@ for ( var i = 0; i < saveButton.length; i++) {
 //       $(this).css('background-color','Green');
 //     }
 // });
-var currentHour = (new Date()).getHours(); 
-$('.time-div').each(function(){ 
-    var val = parseInt($(this).prop('id')); 
-    console.log($(this))
-    console.log(currentHour.getHours);
-    if(val > currentHour && val < currentHour + 6){
-      $(this).css('background-color','Blue'); //future hours shows in blue
-    }else if(val < currentHour && val > currentHour- 6){
-      $(this).css('background-color','Red'); //past hours shows in red
-    }else if(val === currentHour){
-      $(this).css('background-color','White'); //current hour shows in white
-    }else{
-      $(this).css('background-color','Green');
-    }
-});
+var currentHour= new Date(); //returns the hour (0 to 23) of a date
+let hours = currentHour.getHours();
+console.log (currentHour);
+console.log (hours);
+
+function changeColor() {
+  if (hours) {
+    eventEL.css('background-color','Black'); //current hour shows in white
+    console.log ("present")
+  } else if (hours>= 0){
+    eventEL.css('background-color','Red'); //past hours shows in red
+    console.log ("past")
+  } else {
+    eventEL.css('background-color','Blue'); //future hours shows in blue
+    console.log ("future")
+  }
+}
