@@ -14,8 +14,27 @@ var resetBtn = document.querySelectorAll(".saveBtn");
 //variable created to store events
 var saveButton = document.querySelectorAll(".saveBtn");
 // variable to store past, prersent & future w/color
-var eventEL = document.querySelectorAll(".events");
 var hourEL = document.querySelectorAll (".hour");
+
+// RETRIVE ITEM FROM STORAGE AFTER HITTING REFRESH BTN
+//https://stackoverflow.com/questions/17745292/how-to-retrieve-all-localstorage-items-without-knowing-the-keys-in-advance
+
+function allStorage() {
+  var values = [],
+      keys = Object.keys(localStorage),
+      i = keys.length;
+  while ( i-- ) {
+      values.push( localStorage.getItem(keys[i]) );
+  }
+  return values;
+}
+
+for (let i = 0; i < 10; i++) {
+  console.log(document.getElementById(`${i}`))
+  document.getElementById(`${i}`).value = localStorage.getItem(`${i}`)
+}
+
+console.log(allStorage())
 
 //grabs values from hour and entry divs and saves them to local storage
 for ( var i = 0; i < saveButton.length; i++) { 
@@ -24,44 +43,33 @@ for ( var i = 0; i < saveButton.length; i++) {
       if(entry == null) {
         return;
       }
-      var timeName = event.target.previousElementSibling.previousElementSibling.textContent;
+      var timeName = event.target.previousElementSibling.getAttribute("id");
+      console.log(timeName)
       localStorage.setItem(timeName,entry);
-      
-      
     })
 };
 
-// //method that Gets the hours in a date, using local time.
-// var currentHour = (new Date()).getHours(); //The getHours() method returns the hour for the specified date, according to local time.
-// $('.time-div') //SELECT element with the class time-div"
-//   .each(function(){ //create Variable VAL as index position of the selector
-//     var val = parseInt($(this).prop('id')); //parses a string argument and returns an integer'THIS' then, PROP will Add a new property to element ID.
-//     console.log($(this))
-//     console.log(currentHour.getHours);
-//     if(val > currentHour && val < currentHour + 6){
-//       $(this).css('background-color','Blue'); //future hours shows in blue
-//     }else if(val < currentHour && val > currentHour- 6){
-//       $(this).css('background-color','Red'); //past hours shows in red
-//     }else if(val === currentHour){
-//       $(this).css('background-color','White'); //current hour shows in white
-//     }else{
-//       $(this).css('background-color','Green');
-//     }
-// });
-var currentHour= new Date(); //returns the hour (0 to 23) of a date
-let hours = currentHour.getHours();
-console.log (currentHour);
-console.log (hours);
 
-function changeColor() {
-  if (hours) {
-    eventEL.css('background-color','Black'); //current hour shows in white
-    console.log ("present")
-  } else if (hours>= 0){
-    eventEL.css('background-color','Red'); //past hours shows in red
-    console.log ("past")
-  } else {
-    eventEL.css('background-color','Blue'); //future hours shows in blue
-    console.log ("future")
-  }
-}
+var mode = "present";
+var currentHour= new Date(); 
+console.log(currentHour.getHours()); //18
+console.log (currentHour); //Mon Mar 28 2022 18:03:03 GMT-0700
+
+// //IF Statement comparing id="12" vs. currentHour.getHours().
+// function changeColor() {
+//   if (mode ==="present") {
+//     console.log ("present")
+//   } else if (hours>= 0){
+//     mode ="past" ; //past hours shows in red
+//     console.log ("past")
+//   } else {
+//     eventEL.css('background-color','Blue'); //future hours shows in blue
+//     console.log ("future")
+//   }
+// }
+
+// //The forloop to run thru each timeblocks (to change the color)
+// for (var i=0; i < eventEL.length; i++ ) {
+//   eventEL[i].setAttribute ("style", "color: blue");
+
+// }
