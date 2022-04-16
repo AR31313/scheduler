@@ -49,7 +49,7 @@ for ( var i = 0; i < saveButton.length; i++) {
     })
 };
 
-
+//COMPARING TIMEBLOCK TO ACTUAL TIME
 var mode = "present";
 var currentHour= new Date(); 
 console.log(currentHour.getHours()); //18
@@ -59,6 +59,7 @@ console.log (currentHour); //Mon Mar 28 2022 18:03:03 GMT-0700
 // function changeColor() {
 //   if (mode ==="present") {
 //     console.log ("present")
+//      .getAttribute(".present");
 //   } else if (hours>= 0){
 //     mode ="past" ; //past hours shows in red
 //     console.log ("past")
@@ -70,6 +71,5 @@ console.log (currentHour); //Mon Mar 28 2022 18:03:03 GMT-0700
 
 // //The forloop to run thru each timeblocks (to change the color)
 // for (var i=0; i < eventEL.length; i++ ) {
-//   eventEL[i].setAttribute ("style", "color: blue");
-
+//    event.target.getAttribute("id");
 // }
